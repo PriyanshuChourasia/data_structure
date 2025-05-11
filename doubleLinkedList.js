@@ -44,12 +44,34 @@ class DoubleLinkedList{
 
     }
 
+    deleteAtFirst(){
+        if(this.head == null){
+            console.log("Operation cannot be performed");
+            return;
+        }
+
+        let currentNode = this.head;
+        this.head = this.head.next;
+
+        if(this.head != null){
+            this.head.prev = null;
+        }
+        else if(this.head == null){
+            this.tail = this.head;
+        }
+
+        currentNode.next = null;
+    }
+
 
     printDoubleList(){
         if(this.head == null){
+            // console.log(this.head,"head");
             console.log("List is empty");
+            return;
         }
 
+        
         let currentNode = this.head;
         let str = "";
 
@@ -62,9 +84,12 @@ class DoubleLinkedList{
     }
     printReverseList(){
         if(this.head == null){
+            // console.log(this.tail,"tail");
             console.log("List is empty");
+            return;
         }
 
+        
         let currentNode = this.tail;
         let str = "";
 
@@ -81,8 +106,10 @@ const doubleLinkedList = new DoubleLinkedList();
 
 
 doubleLinkedList.insertAtFirst(12);
-doubleLinkedList.insertAtFirst(13);
-doubleLinkedList.insertAtLast(15);
+// doubleLinkedList.insertAtFirst(13);
+// doubleLinkedList.insertAtLast(15);
+
+doubleLinkedList.deleteAtFirst();
 
 doubleLinkedList.printDoubleList();
 doubleLinkedList.printReverseList();

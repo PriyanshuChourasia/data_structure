@@ -1,5 +1,5 @@
 
-const selectionarr = [65,25,12,22,11];
+const selectionarr = [65,25,25,12,22,22,11];
 
 
 function selectionSort(arr){

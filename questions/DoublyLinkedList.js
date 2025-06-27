@@ -6,3 +6,11 @@ class DoublyLinkedNode{
         this.next = null;
     }
 }
+
+
+class DoublyLinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+    }
+}
